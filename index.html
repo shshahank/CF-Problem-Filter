@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Codeforces Problem Filter</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Codeforces Problem Filter</h1>
+    <form method="post" target="_blank">
+      <label for="username">CF Username:</label>
+      <input type="text" name="username" required>
+      <br><br>
+      <label for="rating">Problem Rating: </label>
+      <select name="rating" required>
+        {% for r in rating_options %}
+        <option value="{{ r }}">{{ r }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

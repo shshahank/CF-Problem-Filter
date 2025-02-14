@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> User: <a href="https://codeforces.com/profile/{{ username }}" target="_blank" style="color: gold;"> {{ username }} </a></h1>
+        <h2>- Total Questions Solved: <u>{{ total_solved_problems }}</u></h2>
+        <h2>- Total Questions Solved of (Rating {{ rating }}) : <u>{{total_solved_problems_of_rating}}</u></h2>
+        <h2>- Percentage: <u>{{percentage_solved|round(2)}}</u></h2>
+        <ol>
+            {% for problem in problems %}
+            <li>
+                <strong>{{ loop.index }}.</strong>
+                <strong><a href="https://codeforces.com/contest/{{ problem.contestId }}/problem/{{ problem.index }}" target="_blank">
+                    {{ problem.name }}
+                </a></strong>
+                <br>
+                <span class="meta">
+                    <strong>{{ problem.division }} {{ problem.index }}</strong> | 
+                    Contest Date: {{ problem.contestStart | datetimeformat }} |
+                    Submitted on: {{ problem.submission_date | datetimeformat }}
+                </span>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>

@@ -22,6 +22,7 @@ h1 {
 input {
     width: 150px;
 }
+
 select {
     width: 70px;
 }
@@ -44,4 +45,29 @@ button {
 
 button:hover {
     background: rgb(0, 117, 200);
+}
+
+/* ---- Mobile Responsive CSS ---- */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, select {
+        width: 90%;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
 }

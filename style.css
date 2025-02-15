@@ -8,6 +8,7 @@ body {
     justify-content: center;
     height: 100vh; /* Full viewport height */
     margin: 0;
+    overflow: hidden; /* Prevent background from moving */
 }
 
 .container {
@@ -58,12 +59,13 @@ button:hover {
         align-items: center;
         justify-content: center;
         height: 100vh;
+        background-attachment: fixed; /* Prevent background bleeding */
     }
 
     .container {
-        width: 80%;
+        width: 90%; /* Increased scale of container */
         margin: 0 auto; /* Center horizontally */
-        padding: 15px;
+        padding: 20px;
     }
 
     h1 {

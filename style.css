@@ -63,7 +63,7 @@ button:hover {
     }
 
     .container {
-        width: 90%; /* Increased scale of container */
+        width: 150%; /* Increased scale of container */
         margin: 0 auto; /* Center horizontally */
         padding: 20px;
     }
